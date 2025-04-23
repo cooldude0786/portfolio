@@ -171,6 +171,425 @@ nav {
 
 }
 
+.nameTag {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #111;
+    text-align: center;
+}
+
+.aboutMe .main-title {
+    font-size: clamp(2rem, 6vw, 5rem);
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(45deg, #00ffff, #0000ff, #8a2be2);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    animation: gradientText 3s ease infinite;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.sub-title {
+    position: relative;
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: var(--text-light);
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: 3px solid transparent;
+    border-radius: 12px;
+    background:
+        linear-gradient(#111, #111) padding-box,
+        repeating-linear-gradient(90deg,
+            #ff00cc 0%,
+            #00ffff 20%,
+            #00ff99 40%,
+            #ff6600 60%,
+            #ff00cc 80%,
+            #00ffff 100%) border-box;
+    background-size: 300% 100%;
+    background-position: 0% 50%;
+    animation: borderColorFlow 10s ease-in-out infinite;
+}
+
+@keyframes borderColorFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.aboutMe {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    text-align: left;
+    padding: 40px;
+    gap: 40px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.profile-pic-wrapper {
+    width: 206px;
+    height: 206px;
+    padding: 3px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background:
+        linear-gradient(#111, #111) padding-box,
+        repeating-linear-gradient(90deg,
+            #ff00cc 0%,
+            #00ffff 20%,
+            #00ff99 40%,
+            #ff6600 60%,
+            #ff00cc 80%,
+            #00ffff 100%) border-box;
+    background-size: 300% 100%;
+    background-position: 0% 50%;
+    animation: borderColorFlow 10s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic-wrapper:hover {
+    transform: scale(1.05);
+}
+
+@keyframes borderColorFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 50%;
+    display: block;
+    background-color: #1a1a1a;
+}
+
+.about-text {
+    max-width: 500px;
+    color: #eee;
+    padding-left: 20px;
+}
+
+.main-title {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #00ffff;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.main-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #00ffff, #ff00cc);
+    margin-top: 0.5rem;
+    border-radius: 2px;
+}
+
+.sub-title {
+    font-size: 1.3rem;
+    color: #ff00cc;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.about-text {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.aboutMe:hover .profile-pic-wrapper {
+    transform: scale(1.1);
+    /* Bigger profile picture on hover */
+}
+
+@keyframes glowText {
+
+    0%,
+    100% {
+        text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #ff00cc;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #00ffff, 0 0 15px #ff00cc, 0 0 20px #ff00cc, 0 0 25px #00ffff;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aiPerspective {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+    color: #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeInUp 1s ease-out;
+}
+
+.aiPerspective .main-title {
+    font-size: 2.8rem;
+    color: #00ffff;
+    margin-bottom: 1rem;
+    position: relative;
+    animation: glowText 2.5s infinite alternate;
+}
+
+.aiPerspective .main-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #00ffff, #ff00cc);
+    margin: 0.8rem auto 1.5rem;
+    border-radius: 2px;
+    box-shadow: 0 0 10px #ff00cc;
+    animation: glowText 3s infinite alternate;
+}
+
+.aiPerspective p {
+    max-width: 800px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    animation: fadeInUp 1.5s ease-out;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.05);
+}
+
+/* Initial state for sections that should animate */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* When the section comes into view, this class will trigger the animation */
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Optional: You can add any other animations you'd like for sections that reappear */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #111;
+    color: #ccc;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-left {
+    justify-content: flex-start;
+}
+
+.footer-logo {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.footer-text {
+    font-size: 1rem;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.footer-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav li a:hover {
+    color: #00ffff;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links li a {
+    color: #ccc;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover {
+    color: #00ffff;
+}
+
+/* Ensure footer stays at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .aiPerspective .main-title {
+        font-size: 2.2rem;
+    }
+
+    .aiPerspective p {
+        font-size: 1.05rem;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .aiPerspective {
+        padding: 30px 15px;
+    }
+
+    .aiPerspective .main-title {
+        font-size: 1.8rem;
+    }
+
+    .aiPerspective .main-title::after {
+        width: 40px;
+    }
+
+    .aiPerspective p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -181,72 +600,72 @@ nav {
         justify-content: space-between;
     }
 
-    @media (max-width: 768px) {
-        .nav-right {
-            opacity: 0;
-            position: absolute;
-            top: 15vh;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 75%;
-            height: 0;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 12px;
-            transition: height 0.4s ease, background-color 0.3s ease, opacity 0.6s ease, box-shadow 0.3s ease;
-            z-index: 9;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            font-weight: 700;
-            color: black;
-            border: 4px solid transparent;
+    .nav-right {
+        opacity: 0;
+        position: absolute;
+        top: 15vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        height: 0;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 12px;
+        transition: height 0.4s ease, background-color 0.3s ease, opacity 0.6s ease, box-shadow 0.3s ease;
+        z-index: 9;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        font-weight: 700;
+        color: black;
+        border: 4px solid transparent;
+
+    }
+
+    .nav-right.active {
+        opacity: 1;
+        height: 300px;
+        border: 4px solid transparent;
+
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(0, 255, 204, 0.7);
+
+        animation: glowing-border 4s ease-in-out infinite;
+
+    }
+
+    @keyframes glowing-border {
+        0% {
+            border-color: #ff00cc;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(255, 0, 204, 0.7);
 
         }
 
-        .nav-right.active {
-            opacity: 1;
-            height: 300px;
-            border: 4px solid transparent;
-
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(0, 255, 204, 0.7);
-
-            animation: glowing-border 4s ease-in-out infinite;
+        25% {
+            border-color: #ff6600;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(255, 102, 0, 0.7);
 
         }
 
-        @keyframes glowing-border {
-            0% {
-                border-color: #ff00cc;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(255, 0, 204, 0.7);
+        50% {
+            border-color: #00ff99;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(0, 255, 153, 0.7);
 
-            }
+        }
 
-            25% {
-                border-color: #ff6600;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(255, 102, 0, 0.7);
+        75% {
+            border-color: #00ffff;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(0, 255, 255, 0.7);
 
-            }
+        }
 
-            50% {
-                border-color: #00ff99;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(0, 255, 153, 0.7);
+        100% {
+            border-color: #ff00cc;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(255, 0, 204, 0.7);
 
-            }
-
-            75% {
-                border-color: #00ffff;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(0, 255, 255, 0.7);
-
-            }
-
-            100% {
-                border-color: #ff00cc;
-                box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2), 0 0 10px 4px rgba(255, 0, 204, 0.7);
-
-            }
         }
     }
+
+
 
     .nav-right ul {
         flex-direction: column;
@@ -262,64 +681,8 @@ nav {
         width: fit-content;
         text-align: center;
     }
-}
 
-/* .nameTag {
-    height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    background-color: #111;
-    text-align: center;
-    transform: translateY(7.5v);
-} */
-.nameTag {
-    height: 85vh;
-    display: flex;
-    flex-direction: column; /* Stack vertically */
-    align-items: center;
-    justify-content: center;
-    background-color: #111;
-    text-align: center;
-}
-
-.main-title {
-    font-size: clamp(2rem, 6vw, 5rem);
-    font-weight: bold;
-    color: var(--text-light); /* white or whatever you prefer */
-}
-.sub-title {
-    position: relative;
-    font-size: clamp(1rem, 3vw, 2rem);
-    color: var(--text-light);
-    font-weight: 400;
-    opacity: 0.9;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    border: 3px solid transparent;
-    border-radius: 12px;
-    background: 
-        linear-gradient(#111, #111) padding-box, 
-        linear-gradient(90deg, 
-            #ff00cc, 
-            #00ffff, 
-            #00ff99, 
-            #ff6600, 
-            #ff00cc
-        ) border-box;
-    background-size: 300% 100%;
-    background-position: 0% 50%;
-    animation: borderColorFlow 6s linear infinite;
-}
-
-/* Animation Keyframes */
-@keyframes borderColorFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
+    .about-text p {
+        font-size: 10px;
     }
 }
-

@@ -19,3 +19,34 @@
     });
 
 
+    // Select the sections you want to animate
+const sections = document.querySelectorAll('.fade-in');
+
+// Options for the Intersection Observer
+const options = {
+    root: null, // viewport
+    threshold: 0.5, // 50% of the element needs to be visible
+};
+
+// Callback function to handle the intersection logic
+const handleIntersection = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Add the animation class when the element comes into view
+            entry.target.classList.add('fade-in-visible');
+        } else {
+            // Optionally remove the animation class if you want it to fade out when not in view
+            entry.target.classList.remove('fade-in-visible');
+        }
+    });
+};
+
+// Create an IntersectionObserver instance
+const observer = new IntersectionObserver(handleIntersection, options);
+
+// Observe each section
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+
