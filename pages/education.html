@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education</title>
+    <link rel="stylesheet" href="../css/edu.css">
+    <link rel="stylesheet" href="../index.css">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+            <img src="../scr/logo/main.png" alt="Logo" class="logo">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="nav-right">
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="awards.html" class="nav-link">Prizes and Recognition</a></li>
+                <li><a href="Project.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Info</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <main>
+        <h1>My Education</h1>
+        <div id="education-container"></div>
+    </main>
+    <script>
+        const educationData = [
+            {
+                name: "Government Polytechnic Mumbai",
+                link: "https://www.gpmumbai.ac.in/",
+                image: "../scr/GPM.png",
+                stream: "Diploma in Information Technology (Autonomous)",
+                start: "August 2019",
+                end: "July 2022",
+                score: "89.5%",
+                location: "Mumbai, India"
+            },
+            {
+                name: "Xavier Institute of Engineering",
+                link: "https://www.xavier.ac.in/",
+                image: "../scr/xie.jpg",
+                stream: "Bachelor of Engineering (Information Technology)",
+                start: "December 2022",
+                end: "May 2025",
+                score: "CGPA 8.2",
+                location: "Mumbai, India"
+            }
+        ];
+
+        const container = document.getElementById("education-container");
+
+        educationData.forEach((edu) => {
+            const card = document.createElement("div");
+            card.className = "education-card";
+
+            card.innerHTML = `
+        <img src="${edu.image}" alt="${edu.name} Logo" class="education-logo">
+        <div class="education-details">
+            <h2><a href="${edu.link}" target="_blank">${edu.name}</a></h2>
+            <p><strong>Stream:</strong> ${edu.stream}</p>
+            <p><strong>Duration:</strong> ${edu.start} - ${edu.end}</p>
+            <p><strong>Score:</strong> ${edu.score}</p>
+            <p><strong>Location:</strong> ${edu.location}</p>
+        </div>
+    `;
+
+            container.appendChild(card);
+        });
+
+    </script>
+</body>
+
+</html>

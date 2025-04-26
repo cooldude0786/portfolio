@@ -108,6 +108,12 @@ nav {
     transition: opacity 0.4s ease;
 }
 
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
 .nav-menu li {
     position: relative;
     padding: 10px 0;
@@ -116,7 +122,18 @@ nav {
     transition: transform 0.3s ease;
 }
 
+/* Anchor tag styles scoped to nav only */
+.nav-menu .nav-link {
+    text-decoration: none;
+    color: inherit;
+    /* Keeps the color from the li */
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    /* padding: 10px 0; */
+}
 
+/* Line animations */
 .nav-menu li::before,
 .nav-menu li::after {
     content: "";
@@ -137,9 +154,9 @@ nav {
     right: 0;
     left: auto;
     background: var(--accent-red);
-
 }
 
+/* Hover effects */
 .nav-menu li:hover::before,
 .nav-menu li:hover::after {
     width: 100%;
@@ -148,7 +165,6 @@ nav {
 .nav-menu li:hover {
     transform: scale(1.1);
 }
-
 
 @media (min-width: 769px) {
     .hamburger {
@@ -479,7 +495,9 @@ nav {
     flex-wrap: wrap;
 }
 
-.footer-left, .footer-center, .footer-right {
+.footer-left,
+.footer-center,
+.footer-right {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -546,6 +564,89 @@ main {
     flex: 1;
 }
 
+.skills-section {
+    min-height: 100svh;
+    /* Ensure it doesn't shrink too much */
+    height: auto;
+    /* Let the height adjust automatically */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: #393838;
+    text-align: center;
+    margin-top: 60px;
+}
+
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    width: 50%;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+.skill-tile {
+    background-color: #222;
+    color: transparent;
+    background-image: linear-gradient(90deg, #00ffff, #ff00cc, #00ff99);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s linear infinite;
+
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+
+.skill-tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 30px 10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 8px;
+    }
+
+    .skill-tile {
+        padding: 10px;
+        font-size: 0.75rem;
+        border-radius: 6px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        width: 90%;
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .footer-container {
@@ -553,7 +654,9 @@ main {
         text-align: center;
     }
 
-    .footer-left, .footer-center, .footer-right {
+    .footer-left,
+    .footer-center,
+    .footer-right {
         justify-content: center;
         margin-bottom: 10px;
     }

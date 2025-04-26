@@ -1,0 +1,99 @@
+:root {
+    --primary-bg: black;
+    --accent-green: limegreen;
+    --accent-red: red;
+    --text-light: white;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+}
+
+main {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#education-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Card Layout */
+.education-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+}
+
+/* Image */
+.education-logo {
+    flex-shrink: 0;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 30px;
+}
+
+/* Text Details */
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.education-details h2 {
+    font-size: 1.8rem;
+    color: var(--accent-green);
+}
+
+.education-details h2 a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.education-details p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+/* Hover */
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .education-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .education-logo {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

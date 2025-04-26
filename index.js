@@ -1,25 +1,25 @@
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-right');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-right');
 
-    // Toggle menu on hamburger click
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('open');
-    });
+// Toggle menu on hamburger click
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburger.classList.toggle('open');
+});
 
-    // Close menu if clicked outside
-    document.addEventListener('click', (e) => {
-        const isClickInsideMenu = navMenu.contains(e.target);
-        const isClickOnHamburger = hamburger.contains(e.target);
+// Close menu if clicked outside
+document.addEventListener('click', (e) => {
+    const isClickInsideMenu = navMenu.contains(e.target);
+    const isClickOnHamburger = hamburger.contains(e.target);
 
-        if (!isClickInsideMenu && !isClickOnHamburger) {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('open');
-        }
-    });
+    if (!isClickInsideMenu && !isClickOnHamburger) {
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('open');
+    }
+});
 
 
-    // Select the sections you want to animate
+// Select the sections you want to animate
 const sections = document.querySelectorAll('.fade-in');
 
 // Options for the Intersection Observer
@@ -50,3 +50,16 @@ sections.forEach(section => {
 });
 
 
+const skills = [
+    "Nodejs", "MongoDB", "Express", 'Javascript', 'React', 'Flutter', 'Git/Github', 'Docker'
+    ,'Python','Bootstrap','jQuery','Flask','C/C++','Ardiuino'
+];
+
+const skillsGrid = document.getElementById('skillsGrid');
+
+skills.forEach(skill => {
+    const div = document.createElement('div');
+    div.className = 'skill-tile';
+    div.textContent = skill;
+    skillsGrid.appendChild(div);
+});
