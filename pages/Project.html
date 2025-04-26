@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/project.css">
 </head>
 
 <body>
     <nav>
         <div class="nav-left">
-            <img src="scr/logo/main.png" alt="Logo" class="logo">
+            <img src="../scr/logo/main.png" alt="Logo" class="logo">
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -29,6 +30,18 @@
 
         </div>
     </nav>
+    <main>
+        <h1>My Projects</h1>
+        <div id="projects-container"></div>
+    </main>
+
+    <div id="image-gallery-modal" class="modal">
+        <span class="close" onclick="closeGallery()">&times;</span>
+        <div class="modal-content" id="gallery-images"></div>
+    </div>
+
+
+    <script src="../js/project.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,243 @@
+:root {
+    --primary-bg: black;
+    --accent-green: limegreen;
+    --accent-red: red;
+    --text-light: white;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-light);
+}
+
+
+
+main {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+/* Project Container */
+#projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 40px;
+}
+@keyframes gradientShadowFlow {
+    0%, 100% { 
+        box-shadow: -8px 8px 30px rgba(0, 255, 0, 0.3), 0 0 30px rgba(255, 255, 0, 0.3);
+    }
+    20% { 
+        box-shadow: 0px 8px 30px rgba(0, 255, 255, 0.3), 0 0 30px rgba(255, 0, 255, 0.3);
+    }
+    40% { 
+        box-shadow: 8px 8px 30px rgba(255, 0, 0, 0.3), 0 0 30px rgba(255, 165, 0, 0.3);
+    }
+    60% { 
+        box-shadow: 16px 8px 30px rgba(0, 255, 255, 0.3), 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+    80% { 
+        box-shadow: 24px 8px 30px rgba(0, 255, 0, 0.3), 0 0 30px rgba(255, 165, 0, 0.3);
+    }
+}
+
+.project-card {
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 20px;
+    color: var(--text-light);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    animation: gradientShadowFlow 5s infinite ease-in-out;
+}
+
+/* Optional: Add a fade-in effect after the animation starts */
+.project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Animate visible */
+.project-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left side: Image */
+.project-image-wrapper {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.project-image-wrapper:hover .project-image {
+    transform: scale(1.02);
+}
+
+/* More images +n badge */
+.more-images {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: var(--accent-green);
+    color: black;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+/* Right side: Description */
+.project-content {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-title {
+    /* background-color: #222; */
+    color: transparent;
+    background-image: linear-gradient(90deg, #00ffff, #ff00cc, #00ff99);
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s linear infinite;
+
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    /* color: var(--accent-green); */
+    font-size: 2rem;
+}
+
+
+
+.project-description p {
+    font-size: 1.1rem;
+    color: #ccc;
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    animation: slideUp 0.5s ease forwards;
+}
+
+/* Slide Animation */
+@keyframes slideUp {
+    from {
+        transform: translate(-50%, 100%);
+    }
+    to {
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Modal Content */
+.modal-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Gallery Images */
+.gallery-image {
+    width: 30%;
+    max-height: 250px;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: rgba(0, 255, 0, 0.3);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease;
+}
+
+.close:hover {
+    background: rgba(0, 255, 0, 0.6);
+}
+
+/* Responsive Card for Mobile */
+@media (max-width: 768px) {
+    .project-card {
+        flex-direction: column;
+    }
+
+    .project-image {
+        max-height: 200px;
+    }
+}
+
+@media (max-width:480px){
+    .gallery-image{
+        width: 75%;
+    }
+}
