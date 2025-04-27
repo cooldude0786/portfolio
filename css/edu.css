@@ -97,3 +97,43 @@ main {
         margin-bottom: 20px;
     }
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(255, 255, 255, 0.05); /* light transparent background */
+    backdrop-filter: blur(10px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding-top: 50px;
+  }
+  
+  .modal-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .modal-content img {
+    max-width: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .close {
+    color: var(--text-light);
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
