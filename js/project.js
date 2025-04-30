@@ -2,7 +2,7 @@
 const projects = [
     {
         title: "CTC (Salary Prediction System)",
-        images: ['GPM.png','GPM.png','GPM.png','GPM.png','GPM.png','GPM.png','GPM.png','GPM.png', 'profile.png'],
+        images: ['ctc1.jpg','ctc2.jpg','ctc3.jpg','ctc4.jpg','ctc5.jpg','ctc6.jpg','ctc7.jpg','ctc8.jpg',],
         description: [
             "Developed a machine learning model to predict the salary of final-year students or freshers.",
             "Used XGBoost Regressor for model building and achieved optimal performance.",
@@ -11,7 +11,7 @@ const projects = [
     },
     {
         title: "BlueSign - Bluetooth Attendance System",
-        images: ['GPM.png', 'profile.png'],
+        images: ['b1.png','b2.png','b3.jpg','b4.jpg','b5.jpg'],
         description: [
             "An innovative mobile-based attendance system using Flutter and Bluetooth Low Energy (BLE).",
             "Integrated email verification, Node.js backend, and real-time attendance tracking.",
@@ -20,7 +20,7 @@ const projects = [
     },
     {
         title: "Multi-Linguistic LAN Chat Application",
-        images: ['GPM.png', 'profile.png'],
+        images: ['l1.jpg','l2.jpg','l3.jpg','l4.jpg','l5.jpg','l6.jpg','l7.jpg'],
         description: [
             "Developed a LAN-based chat application with real-time multilingual support.",
             "Leveraged Google NLP for language translation between users.",
@@ -29,7 +29,10 @@ const projects = [
     },
     {
         title: "Easy 2 Vote (E-Voting System)",
-        images: ['GPM.png', 'profile.png'],
+        images: ['e3.jpg','e2.jpg','e1.png','e4.png','e5.png','e6.png','e7.jpg','e8.png','e9.jpg'
+,'e10.jpg','e11.jpg','e13.png','e14.png','e15.jpg'
+
+        ],
         description: [
             "Created a secure and user-friendly online voting platform.",
             "Enabled users to create customized polls with real-time result display.",
@@ -38,7 +41,7 @@ const projects = [
     },
     {
         title: "SolarSense Intellilight",
-        images: ['GPM.png', 'profile.png'],
+        images: ['ss2.jpg','ss1.jpg','ss3.jpg','ss4.jpg','ss5.jpg','ss6.jpg'],
         description: [
             "Designed an IoT-based smart lighting system with automation and sensing features.",
             "Achieved a 40% reduction in power consumption through intelligent control.",
@@ -47,7 +50,7 @@ const projects = [
     },
     {
         title: "TechNanny (Smart Cradle System)",
-        images: ['GPM.png', 'profile.png'],
+        images: ['tc1.jpg','tc2.jpg','tc3.jpg','tc4.jpg','tc5.jpg'],
         description: [
             "Built an IoE-based smart cradle system for baby monitoring.",
             "Implemented sensors to monitor temperature and visualize health trends.",
